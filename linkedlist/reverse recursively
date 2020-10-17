@@ -1,1 +1,18 @@
 
+public class Solution {
+    public ListNode reverseList(ListNode head) {
+    	if(head == null) return head;
+    	ListNode temp = head.next;
+    	head.next = null;
+    	
+    	return recursive(head,temp);
+    }
+    
+    private ListNode recursive(ListNode head, ListNode temp){
+    	if(temp == null)	return head;
+    	ListNode nexxt = temp.next;
+    	temp.next = head;
+    	return recursive(nexxt,temp);
+    	
+    }
+}
